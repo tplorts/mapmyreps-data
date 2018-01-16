@@ -1,0 +1,16 @@
+STORAGE_DIR='temp'
+if [ ! -d "$STORAGE_DIR" ]; then
+  mkdir $STORAGE_DIR
+fi
+
+YEAR=2016
+CONGRESS=115
+OBJECT_NAME="cb_${YEAR}_us_cd${CONGRESS}_500k"
+
+FILENAME="${OBJECT_NAME}.zip"
+ZIP_PATH="${STORAGE_DIR}/${FILENAME}"
+UNZIP_PATH="${STORAGE_DIR}/${OBJECT_NAME}"
+SOURCE_URL="https://www2.census.gov/geo/tiger/GENZ${YEAR}/shp/${FILENAME}"
+
+curl $SOURCE_URL -o $ZIP_PATH
+unzip -o $ZIP_PATH -d $UNZIP_PATH
