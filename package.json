@@ -1,0 +1,13 @@
+{
+  "name": "mapmyreps-data",
+  "version": "1.0.0",
+  "description": "Scripts for fetching and updating the static data sources of Map My Reps",
+  "main": "index.js",
+  "repository": "https://github.com/tplorts/mapmyreps-data.git",
+  "author": "Ted Lorts <tplorts@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "request": "^2.83.0",
+    "request-promise-native": "^1.0.5"
+  }
+}
