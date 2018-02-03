@@ -1,4 +1,4 @@
-USA_DATA_BASE_DIR='dist-data'
+USA_DATA_BASE_DIR='dist'
 if [ ! -d "$USA_DATA_BASE_DIR" ]; then
   echo "no directory here named $USA_DATA_BASE_DIR.  Did you already prepare the data?"
   exit 1
@@ -20,4 +20,4 @@ DATA_BUCKET_ID=$1
 
 S3_DATA_BUCKET="$DATA_BUCKET_ID.mapmyreps.us"
 
-aws s3 cp $USA_DATA_BASE_DIR/ s3://$S3_DATA_BUCKET/ --recursive --acl public-read
+# aws s3 cp $USA_DATA_BASE_DIR/ s3://$S3_DATA_BUCKET/ --recursive --acl public-read
