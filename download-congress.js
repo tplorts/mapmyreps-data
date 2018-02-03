@@ -1,7 +1,7 @@
 const fs = require('fs')
 const request = require('request-promise-native')
 
-const dataBaseDir = process.env.USA_DATA_BASE_DIR
+const congressDir = 'dist/congress'
 
 
 
@@ -24,13 +24,11 @@ async function get(filename) {
 async function saveCondensed(filename) {
   const sourceJson = await get(filename)
   const condensedJson = JSON.stringify(JSON.parse(sourceJson))
-  const path = `${dataBaseDir}/congress/${filename}`
+  const path = `${congressDir}/${filename}`
   return new Promise((resolve, reject) => {
     fs.writeFile(path, condensedJson, err => { if (err) { reject(err) } else { resolve() } })
   })
 }
 
-for (const f of DataFiles) {
-  saveCondensed(f)
-}
-
+const writeAll = Promise.all(DataFiles.map(f => saveCondensed(f)))
+writeAll.then(() => console.log('Done')).catch(err => console.error(err))

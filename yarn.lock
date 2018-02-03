@@ -515,6 +515,10 @@ tweetnacl@^0.14.3, tweetnacl@~0.14.0:
   version "0.14.5"
   resolved "https://registry.yarnpkg.com/tweetnacl/-/tweetnacl-0.14.5.tgz#5ae68177f192d4456269d108afa93ff8743f4f64"
 
+us-atlas@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/us-atlas/-/us-atlas-1.0.2.tgz#e1991f5d982a94810b45a368eabb7e2eecfdc5f2"
+
 uuid@^3.1.0:
   version "3.2.1"
   resolved "https://registry.yarnpkg.com/uuid/-/uuid-3.2.1.tgz#12c528bb9d58d0b9265d9a2f6f0fe8be17ff1f14"

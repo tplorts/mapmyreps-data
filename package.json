@@ -9,9 +9,13 @@
   "dependencies": {
     "request": "^2.83.0",
     "request-promise-native": "^1.0.5",
-    "s3-deploy": "^0.9.0"
+    "s3-deploy": "^0.9.0",
+    "us-atlas": "^1.0.2"
   },
   "scripts": {
+    "prepare-directories": "mkdir dist; mkdir dist/congress; mkdir dist/geography",
+    "prepare-atlas": "cp ./node_modules/us-atlas/us/10m.json dist/geography/us-atlas-10m.json",
+    "prepare-congress": "node download-congress.js",
     "deploy-all": "s3-deploy './dist/**' --cwd './dist/' --gzip",
     "deploy-all:dev": "yarn deploy-all --bucket 'dev-data.mapmyreps.us'",
     "deploy-all:staging": "yarn deploy-all --bucket 'staging-data.mapmyreps.us'",
