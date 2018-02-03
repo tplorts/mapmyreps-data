@@ -15,6 +15,11 @@ if [ ! -d "$GEOGRAPHY_DIR" ]; then
   mkdir $GEOGRAPHY_DIR
 fi
 
+GEOJSON_DIR="${STORAGE_DIR}/districts-geo"
+if [ ! -d "$GEOJSON_DIR" ]; then
+  mkdir $GEOJSON_DIR
+fi
+
 OUT_DATA_DIR="${GEOGRAPHY_DIR}/districts"
 if [ ! -d "$OUT_DATA_DIR" ]; then
   mkdir $OUT_DATA_DIR
@@ -36,7 +41,7 @@ for i in {1..99}
 do
   FIPS_CODE=$(printf %02d $i)
   echo "State $FIPS_CODE"
-  featuresGeoFile="${STORAGE_DIR}/districts-geo/${FIPS_CODE}.json"
+  featuresGeoFile="${GEOJSON_DIR}/${FIPS_CODE}.json"
   featuresTopoFile="${OUT_DATA_DIR}/${FIPS_CODE}.json"
 
 
