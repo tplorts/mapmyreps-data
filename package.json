@@ -9,7 +9,7 @@
   "dependencies": {
     "request": "^2.83.0",
     "request-promise-native": "^1.0.5",
-    "s3-deploy": "^0.10.0",
+    "s3-deploy": "^1.1.1",
     "us-atlas": "^1.0.2"
   },
   "scripts": {
@@ -23,6 +23,13 @@
     "deploy-congress": "s3-deploy './dist/congress/**' --cwd './dist/' --gzip",
     "deploy-congress:dev": "yarn deploy-congress --bucket 'dev-data.mapmyreps.us'",
     "deploy-congress:staging": "yarn deploy-congress --bucket 'staging-data.mapmyreps.us'",
-    "deploy-congress:prod": "yarn deploy-congress --bucket 'data.mapmyreps.us'"
+    "deploy-congress:prod": "yarn deploy-congress --bucket 'data.mapmyreps.us'",
+    "deploy-geography": "s3-deploy './dist/geography/**' --cwd './dist/' --gzip",
+    "deploy-geography:dev": "yarn deploy-geography --bucket 'dev-data.mapmyreps.us'",
+    "deploy-geography:staging": "yarn deploy-geography --bucket 'staging-data.mapmyreps.us'",
+    "deploy-geography:prod": "yarn deploy-geography --bucket 'data.mapmyreps.us'"
+  },
+  "devDependencies": {
+    "standard": "^11.0.1"
   }
 }
