@@ -3,7 +3,7 @@ if [ ! -d "$STORAGE_DIR" ]; then
   mkdir $STORAGE_DIR
 fi
 
-YEAR=2016
+YEAR=2017
 CONGRESS=115
 OBJECT_NAME="cb_${YEAR}_us_cd${CONGRESS}_500k"
 
